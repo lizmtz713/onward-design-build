@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Onward Design Build | Houston Luxury Projects</title>
+    <meta name="description" content="Explore Onward Design Build's portfolio of luxury custom homes, commercial developments, and high-end renovations in Houston, Texas.">
+    <link rel="canonical" href="https://onwarddesignbuild.com/portfolio">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'onward-black': '#0D0D0D',
+                        'onward-charcoal': '#1A1A1A',
+                        'onward-gray': '#2D2D2D',
+                        'onward-gold': '#C9A962',
+                        'onward-cream': '#F8F6F3',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .btn-premium { position: relative; overflow: hidden; border: 1px solid #C9A962; background: transparent; color: #C9A962; transition: color 0.4s ease; }
+        .btn-premium::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #C9A962; transition: left 0.4s ease; z-index: -1; }
+        .btn-premium:hover { color: #0D0D0D; }
+        .btn-premium:hover::before { left: 0; }
+        
+        .project-card { position: relative; overflow: hidden; cursor: pointer; }
+        .project-card img { transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+        .project-card:hover img { transform: scale(1.05); }
+        .project-card .overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.3) 50%, transparent 100%); opacity: 0.8; transition: opacity 0.4s; }
+        .project-card:hover .overlay { opacity: 1; }
+        .project-card .content { transform: translateY(20px); opacity: 0.8; transition: all 0.4s; }
+        .project-card:hover .content { transform: translateY(0); opacity: 1; }
+        
+        .filter-btn { transition: all 0.3s; }
+        .filter-btn.active { color: #C9A962; border-color: #C9A962; }
+    </style>
+</head>
+<body class="font-sans text-white bg-onward-black antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-onward-black/95 backdrop-blur-md">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="font-display text-2xl lg:text-3xl font-semibold tracking-[0.2em] hover:text-onward-gold transition-colors">ONWARD</a>
+                <div class="hidden lg:flex items-center space-x-16">
+                    <a href="about.html" class="text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">ABOUT</a>
+                    <a href="portfolio.html" class="text-[13px] tracking-[0.2em] text-onward-gold">PORTFOLIO</a>
+                    <a href="services.html" class="text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">SERVICES</a>
+                    <a href="contact.html" class="btn-premium px-8 py-4 text-[13px] tracking-[0.2em]">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-16 bg-onward-charcoal">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <p class="font-serif text-onward-gold tracking-[0.4em] text-sm mb-6 reveal">OUR WORK</p>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-medium reveal">
+                Selected <span class="italic">Projects</span>
+            </h1>
+            <p class="font-serif text-xl text-gray-400 mt-8 max-w-2xl reveal">
+                A curated collection of our finest work—custom homes, commercial developments, and transformative renovations across Houston.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter -->
+    <section class="py-8 bg-onward-black border-b border-onward-gray/30">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="flex flex-wrap gap-4">
+                <button class="filter-btn active px-6 py-3 border border-onward-gray/50 text-[12px] tracking-[0.2em]" data-filter="all">ALL PROJECTS</button>
+                <button class="filter-btn px-6 py-3 border border-onward-gray/50 text-[12px] tracking-[0.2em] text-gray-400" data-filter="residential">RESIDENTIAL</button>
+                <button class="filter-btn px-6 py-3 border border-onward-gray/50 text-[12px] tracking-[0.2em] text-gray-400" data-filter="commercial">COMMERCIAL</button>
+                <button class="filter-btn px-6 py-3 border border-onward-gray/50 text-[12px] tracking-[0.2em] text-gray-400" data-filter="renovation">RENOVATIONS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-20 bg-onward-black">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="project-card aspect-[4/3] reveal" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000" 
+                         alt="The Meridian Estate - River Oaks" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="content absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                        <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-2">RESIDENTIAL • RIVER OAKS</p>
+                        <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">The Meridian Estate</h3>
+                        <p class="font-serif text-gray-400">12,500 SF Custom Luxury Home</p>
+                        <div class="mt-6 flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                            VIEW DETAILS
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card aspect-[4/3] reveal" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000" 
+                         alt="Apex Tower - Galleria" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="content absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                        <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-2">COMMERCIAL • GALLERIA</p>
+                        <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">Apex Tower</h3>
+                        <p class="font-serif text-gray-400">Mixed-Use Development</p>
+                        <div class="mt-6 flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                            VIEW DETAILS
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card aspect-[4/3] reveal" data-category="renovation">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000" 
+                         alt="The Harrington Residence" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="content absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                        <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-2">RENOVATION • MEMORIAL</p>
+                        <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">The Harrington Residence</h3>
+                        <p class="font-serif text-gray-400">Complete Home Transformation</p>
+                        <div class="mt-6 flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                            VIEW DETAILS
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-card aspect-[4/3] reveal" data-category="residential">
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1000" 
+                         alt="Tanglewood Modern" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="content absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                        <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-2">RESIDENTIAL • TANGLEWOOD</p>
+                        <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">Tanglewood Modern</h3>
+                        <p class="font-serif text-gray-400">8,200 SF Contemporary Home</p>
+                        <div class="mt-6 flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                            VIEW DETAILS
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-card aspect-[4/3] reveal" data-category="commercial">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000" 
+                         alt="Montrose Retail Center" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="content absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                        <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-2">COMMERCIAL • MONTROSE</p>
+                        <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">Montrose Retail Center</h3>
+                        <p class="font-serif text-gray-400">15,000 SF Retail Development</p>
+                        <div class="mt-6 flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                            VIEW DETAILS
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="project-card aspect-[4/3] reveal" data-category="renovation">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000" 
+                         alt="West University Revival" 
+                         class="w-full h-full object-cover">
+                    <div class="overlay"></div>
+                    <div class="content absolute bottom-0 left-0 right-0 p-8 lg:p-10">
+                        <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-2">RENOVATION • WEST U</p>
+                        <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">West University Revival</h3>
+                        <p class="font-serif text-gray-400">Historic Home Modernization</p>
+                        <div class="mt-6 flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                            VIEW DETAILS
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-32 bg-onward-charcoal text-center">
+        <div class="max-w-3xl mx-auto px-6 reveal">
+            <h2 class="font-display text-4xl md:text-5xl font-medium mb-8">
+                Ready to Add Your Project to Our <span class="italic text-onward-gold">Portfolio</span>?
+            </h2>
+            <p class="font-serif text-xl text-gray-400 mb-12">
+                Let's discuss how we can bring your vision to life.
+            </p>
+            <a href="contact.html" class="btn-premium inline-block px-12 py-5 text-[13px] tracking-[0.25em]">
+                START YOUR PROJECT
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-onward-black border-t border-onward-gray/30">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="font-display text-2xl tracking-[0.2em] mb-4 md:mb-0">ONWARD</a>
+                <p class="text-[11px] tracking-[0.1em] text-gray-600">© 2026 ONWARD DESIGN BUILD LLC</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Reveal animation
+        const revealElements = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => observer.observe(el));
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projects = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+                
+                filterBtns.forEach(b => b.classList.remove('active', 'text-onward-gold', 'border-onward-gold'));
+                filterBtns.forEach(b => b.classList.add('text-gray-400'));
+                btn.classList.add('active', 'text-onward-gold', 'border-onward-gold');
+                btn.classList.remove('text-gray-400');
+                
+                projects.forEach(project => {
+                    if (filter === 'all' || project.dataset.category === filter) {
+                        project.style.display = 'block';
+                    } else {
+                        project.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

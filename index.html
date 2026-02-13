@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onward Design Build | Houston's Premier Luxury Design-Build Firm</title>
+    <meta name="description" content="Houston's leading design-build firm specializing in custom luxury homes, commercial development, and high-end renovations. Transform your vision into reality with Onward Design Build.">
+    <meta name="keywords" content="luxury home builder Houston, custom homes Houston, design build Houston, commercial construction Houston, high-end renovations, Shahbazz Anwar">
+    <meta name="author" content="Onward Design Build LLC">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Onward Design Build | Luxury Construction Houston">
+    <meta property="og:description" content="Where Vision Meets Craftsmanship. Houston's premier design-build firm for discerning clients seeking excellence.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onwarddesignbuild.com">
+    <meta property="og:image" content="https://onwarddesignbuild.com/og-image.jpg">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Onward Design Build | Luxury Construction Houston">
+    <meta name="twitter:description" content="Where Vision Meets Craftsmanship. Houston's premier design-build firm.">
+    
+    <!-- Schema.org Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HomeAndConstructionBusiness",
+        "name": "Onward Design Build LLC",
+        "description": "Houston's premier luxury design-build firm specializing in custom homes, commercial development, and high-end renovations.",
+        "url": "https://onwarddesignbuild.com",
+        "telephone": "+1-832-812-7476",
+        "email": "Shahbazz@onwarddesignbuild.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1212 Edwards St Unit A",
+            "addressLocality": "Houston",
+            "addressRegion": "TX",
+            "postalCode": "77007",
+            "addressCountry": "US"
+        },
+        "founder": {
+            "@type": "Person",
+            "name": "Shahbazz Anwar"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Houston"
+        },
+        "priceRange": "$$$$$"
+    }
+    </script>
+    
+    <!-- Canonical -->
+    <link rel="canonical" href="https://onwarddesignbuild.com">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'onward-black': '#0D0D0D',
+                        'onward-charcoal': '#1A1A1A',
+                        'onward-gray': '#2D2D2D',
+                        'onward-gold': '#C9A962',
+                        'onward-gold-light': '#E8D5A3',
+                        'onward-gold-dark': '#A68B4B',
+                        'onward-cream': '#F8F6F3',
+                        'onward-warm': '#FAF9F7',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease forwards',
+                        'slide-up': 'slideUp 1s ease forwards',
+                        'scale-in': 'scaleIn 1.2s ease forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        scaleIn: {
+                            '0%': { opacity: '0', transform: 'scale(1.1)' },
+                            '100%': { opacity: '1', transform: 'scale(1)' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        /* Video/Image Hero */
+        .hero-media {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        .hero-media video, .hero-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                rgba(13,13,13,0.4) 0%,
+                rgba(13,13,13,0.6) 50%,
+                rgba(13,13,13,0.85) 100%
+            );
+        }
+        
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+        
+        /* Parallax effect */
+        .parallax {
+            transform: translateY(var(--parallax-offset, 0));
+            transition: transform 0.1s linear;
+        }
+        
+        /* Gold gradient text */
+        .gold-gradient {
+            background: linear-gradient(135deg, #C9A962 0%, #E8D5A3 50%, #C9A962 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Elegant underline */
+        .elegant-line::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, #C9A962, transparent);
+            margin-top: 32px;
+        }
+        .elegant-line-center::after {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Premium buttons */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #C9A962;
+            background: transparent;
+            color: #C9A962;
+            transition: color 0.4s ease;
+        }
+        .btn-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: #C9A962;
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+        .btn-premium:hover {
+            color: #0D0D0D;
+        }
+        .btn-premium:hover::before {
+            left: 0;
+        }
+        
+        .btn-premium-solid {
+            background: #C9A962;
+            color: #0D0D0D;
+            transition: all 0.4s ease;
+        }
+        .btn-premium-solid:hover {
+            background: #E8D5A3;
+            box-shadow: 0 20px 40px rgba(201, 169, 98, 0.3);
+        }
+        
+        /* Project cards */
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card .image-wrapper {
+            overflow: hidden;
+        }
+        .project-card img {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
+        .project-card .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.4) 40%, transparent 70%);
+            opacity: 0.9;
+            transition: opacity 0.4s ease;
+        }
+        .project-card:hover .overlay {
+            opacity: 1;
+        }
+        .project-card .content {
+            opacity: 0.9;
+            transform: translateY(10px);
+            transition: all 0.4s ease;
+        }
+        .project-card:hover .content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .project-card .view-link {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.4s ease 0.1s;
+        }
+        .project-card:hover .view-link {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Marquee */
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+        
+        /* Scroll indicator */
+        .scroll-line {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, #C9A962, transparent);
+            animation: scrollPulse 2s ease infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 1; height: 60px; }
+            50% { opacity: 0.5; height: 40px; }
+        }
+        
+        /* Cursor follower (optional luxury touch) */
+        .cursor-follower {
+            width: 20px;
+            height: 20px;
+            border: 1px solid #C9A962;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease;
+            mix-blend-mode: difference;
+        }
+        
+        /* Stats counter */
+        .stat-item {
+            position: relative;
+        }
+        .stat-item::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, #C9A962, transparent);
+        }
+        .stat-item:last-child::after {
+            display: none;
+        }
+        
+        /* Image reveal */
+        .image-reveal {
+            position: relative;
+            overflow: hidden;
+        }
+        .image-reveal::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: #C9A962;
+            transform: scaleX(1);
+            transform-origin: right;
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .image-reveal.revealed::after {
+            transform: scaleX(0);
+        }
+    </style>
+</head>
+<body class="font-sans text-white bg-onward-black antialiased">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-onward-black flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="font-display text-3xl tracking-wider mb-4">ONWARD</div>
+            <div class="w-48 h-[1px] bg-onward-gray overflow-hidden">
+                <div class="h-full bg-onward-gold animate-pulse" style="width: 60%"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" id="navbar">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="flex justify-between items-center h-28">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center group">
+                    <div class="relative">
+                        <span class="font-display text-2xl lg:text-3xl font-semibold tracking-[0.2em] group-hover:text-onward-gold transition-colors">ONWARD</span>
+                        <span class="absolute -bottom-1 left-0 w-0 h-[1px] bg-onward-gold group-hover:w-full transition-all duration-500"></span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-16">
+                    <a href="about.html" class="nav-link text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">ABOUT</a>
+                    <a href="portfolio.html" class="nav-link text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">PORTFOLIO</a>
+                    <a href="services.html" class="nav-link text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">SERVICES</a>
+                    <a href="contact.html" class="btn-premium px-8 py-4 text-[13px] tracking-[0.2em]">CONTACT</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden w-10 h-10 flex flex-col justify-center items-center" id="menu-toggle">
+                    <span class="block w-7 h-[1px] bg-white mb-2 transition-all" id="menu-line-1"></span>
+                    <span class="block w-7 h-[1px] bg-white transition-all" id="menu-line-2"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Mobile Menu Fullscreen -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-onward-black/98 backdrop-blur-lg opacity-0 pointer-events-none transition-opacity duration-500">
+        <div class="h-full flex flex-col justify-center items-center">
+            <nav class="text-center space-y-8">
+                <a href="index.html" class="block font-display text-4xl hover:text-onward-gold transition-colors">Home</a>
+                <a href="about.html" class="block font-display text-4xl hover:text-onward-gold transition-colors">About</a>
+                <a href="portfolio.html" class="block font-display text-4xl hover:text-onward-gold transition-colors">Portfolio</a>
+                <a href="services.html" class="block font-display text-4xl hover:text-onward-gold transition-colors">Services</a>
+                <a href="contact.html" class="block font-display text-4xl hover:text-onward-gold transition-colors">Contact</a>
+            </nav>
+            <div class="mt-16 text-center">
+                <p class="text-onward-gold tracking-widest text-sm mb-2">CALL US</p>
+                <a href="tel:+18328127476" class="font-serif text-2xl">(832) 812-7476</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[800px] flex items-end overflow-hidden">
+        <!-- Background -->
+        <div class="hero-media">
+            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=85" 
+                 alt="Luxury Custom Home Houston" 
+                 class="animate-scale-in"
+                 loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 w-full max-w-[1600px] mx-auto px-6 lg:px-16 pb-32">
+            <div class="max-w-4xl">
+                <p class="font-serif text-onward-gold text-xl md:text-2xl tracking-[0.4em] mb-8 reveal">
+                    HOUSTON, TEXAS
+                </p>
+                <h1 class="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-medium leading-[0.95] mb-10 reveal reveal-delay-1">
+                    Where Vision<br>
+                    Meets <span class="italic text-onward-gold">Craft</span>
+                </h1>
+                <p class="font-serif text-xl md:text-2xl text-gray-400 max-w-xl mb-12 leading-relaxed reveal reveal-delay-2">
+                    Houston's premier design-build firm for those who refuse to settle for ordinary.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 reveal reveal-delay-3">
+                    <a href="portfolio.html" class="btn-premium px-10 py-5 text-[13px] tracking-[0.25em] text-center">
+                        VIEW OUR WORK
+                    </a>
+                    <a href="contact.html" class="btn-premium-solid px-10 py-5 text-[13px] tracking-[0.25em] text-center">
+                        START YOUR PROJECT
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center">
+            <span class="text-[11px] tracking-[0.3em] text-gray-500 mb-4 rotate-90 origin-center translate-x-8">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+        
+        <!-- Hero Stats Overlay -->
+        <div class="absolute bottom-0 right-0 hidden xl:block bg-onward-charcoal/90 backdrop-blur-sm">
+            <div class="flex">
+                <div class="px-12 py-10 border-l border-onward-gray/30">
+                    <p class="gold-gradient font-display text-5xl font-medium">50+</p>
+                    <p class="text-[11px] tracking-[0.2em] text-gray-500 mt-2">PROJECTS</p>
+                </div>
+                <div class="px-12 py-10 border-l border-onward-gray/30">
+                    <p class="gold-gradient font-display text-5xl font-medium">$25M</p>
+                    <p class="text-[11px] tracking-[0.2em] text-gray-500 mt-2">DEVELOPED</p>
+                </div>
+                <div class="px-12 py-10 border-l border-onward-gray/30">
+                    <p class="gold-gradient font-display text-5xl font-medium">15+</p>
+                    <p class="text-[11px] tracking-[0.2em] text-gray-500 mt-2">YEARS</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marquee -->
+    <section class="py-6 bg-onward-gold overflow-hidden">
+        <div class="marquee-track flex whitespace-nowrap">
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">CUSTOM HOMES</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">COMMERCIAL DEVELOPMENT</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">LUXURY RENOVATIONS</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">DESIGN CONSULTATION</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">CUSTOM HOMES</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">COMMERCIAL DEVELOPMENT</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">LUXURY RENOVATIONS</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+            <span class="font-display text-lg tracking-[0.3em] text-onward-black mx-12">DESIGN CONSULTATION</span>
+            <span class="text-onward-black/50 mx-4">✦</span>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-32 lg:py-48 bg-onward-cream text-onward-black">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-12 gap-16 lg:gap-24">
+                <!-- Left Column -->
+                <div class="lg:col-span-5 reveal">
+                    <p class="font-serif text-onward-gold-dark tracking-[0.4em] text-sm mb-8">OUR PHILOSOPHY</p>
+                    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.1] elegant-line">
+                        We don't build structures.<br>
+                        <span class="italic">We create legacies.</span>
+                    </h2>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="lg:col-span-6 lg:col-start-7 reveal reveal-delay-2">
+                    <div class="space-y-8">
+                        <p class="font-serif text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                            For over a decade, Onward Design Build has defined luxury construction in Houston. We partner exclusively with clients who understand that exceptional quality requires exceptional attention to detail.
+                        </p>
+                        <p class="font-serif text-xl lg:text-2xl text-gray-600 leading-relaxed">
+                            From River Oaks estates to landmark commercial developments, every project bears our signature: an uncompromising commitment to excellence that transforms visions into architectural masterpieces.
+                        </p>
+                        <a href="about.html" class="inline-flex items-center text-onward-gold-dark text-[13px] tracking-[0.2em] group mt-8">
+                            DISCOVER OUR STORY
+                            <svg class="w-5 h-5 ml-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="py-32 lg:py-48 bg-onward-black">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <!-- Section Header -->
+            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20 reveal">
+                <div>
+                    <p class="font-serif text-onward-gold tracking-[0.4em] text-sm mb-6">SELECTED WORK</p>
+                    <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-medium">Featured Projects</h2>
+                </div>
+                <a href="portfolio.html" class="inline-flex items-center text-onward-gold text-[13px] tracking-[0.2em] group mt-8 lg:mt-0">
+                    VIEW ALL PROJECTS
+                    <svg class="w-5 h-5 ml-4 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Projects Grid -->
+            <div class="grid lg:grid-cols-2 gap-8">
+                <!-- Project 1 - Large -->
+                <div class="project-card lg:row-span-2 aspect-[3/4] lg:aspect-auto cursor-pointer reveal">
+                    <div class="image-wrapper h-full">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=85" 
+                             alt="River Oaks Estate" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                        <div class="content">
+                            <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-3">RESIDENTIAL • RIVER OAKS</p>
+                            <h3 class="font-display text-3xl lg:text-4xl font-medium mb-2">The Meridian Estate</h3>
+                            <p class="font-serif text-gray-400 text-lg">12,500 SF Custom Luxury Home</p>
+                        </div>
+                        <div class="view-link mt-6">
+                            <span class="inline-flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                                VIEW PROJECT
+                                <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card aspect-[4/3] cursor-pointer reveal reveal-delay-1">
+                    <div class="image-wrapper h-full">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1000&q=85" 
+                             alt="Galleria Commercial" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="content">
+                            <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-3">COMMERCIAL • GALLERIA</p>
+                            <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">Apex Tower</h3>
+                            <p class="font-serif text-gray-400">Mixed-Use Development</p>
+                        </div>
+                        <div class="view-link mt-4">
+                            <span class="inline-flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                                VIEW PROJECT
+                                <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card aspect-[4/3] cursor-pointer reveal reveal-delay-2">
+                    <div class="image-wrapper h-full">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000&q=85" 
+                             alt="Memorial Modern" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-8">
+                        <div class="content">
+                            <p class="text-onward-gold text-[11px] tracking-[0.3em] mb-3">RENOVATION • MEMORIAL</p>
+                            <h3 class="font-display text-2xl lg:text-3xl font-medium mb-2">The Harrington Residence</h3>
+                            <p class="font-serif text-gray-400">Complete Home Transformation</p>
+                        </div>
+                        <div class="view-link mt-4">
+                            <span class="inline-flex items-center text-onward-gold text-[12px] tracking-[0.2em]">
+                                VIEW PROJECT
+                                <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-32 lg:py-48 bg-onward-charcoal">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="text-center mb-20 reveal">
+                <p class="font-serif text-onward-gold tracking-[0.4em] text-sm mb-6">WHAT WE DO</p>
+                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-medium">Our Services</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-onward-gray/30">
+                <!-- Service 1 -->
+                <div class="bg-onward-charcoal p-10 lg:p-12 group hover:bg-onward-gray/50 transition-colors reveal">
+                    <div class="w-16 h-16 border border-onward-gold/30 flex items-center justify-center mb-8 group-hover:bg-onward-gold group-hover:border-onward-gold transition-all">
+                        <svg class="w-8 h-8 text-onward-gold group-hover:text-onward-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-medium mb-4">Custom Homes</h3>
+                    <p class="font-serif text-gray-400 leading-relaxed mb-6">Bespoke residences designed and built to your exact vision, from architectural concept to final walkthrough.</p>
+                    <a href="services.html#custom-homes" class="text-onward-gold text-[12px] tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">LEARN MORE →</a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-onward-charcoal p-10 lg:p-12 group hover:bg-onward-gray/50 transition-colors reveal reveal-delay-1">
+                    <div class="w-16 h-16 border border-onward-gold/30 flex items-center justify-center mb-8 group-hover:bg-onward-gold group-hover:border-onward-gold transition-all">
+                        <svg class="w-8 h-8 text-onward-gold group-hover:text-onward-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-medium mb-4">Commercial</h3>
+                    <p class="font-serif text-gray-400 leading-relaxed mb-6">Retail, office, and mixed-use developments built for investors who demand exceptional returns and quality.</p>
+                    <a href="services.html#commercial" class="text-onward-gold text-[12px] tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">LEARN MORE →</a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-onward-charcoal p-10 lg:p-12 group hover:bg-onward-gray/50 transition-colors reveal reveal-delay-2">
+                    <div class="w-16 h-16 border border-onward-gold/30 flex items-center justify-center mb-8 group-hover:bg-onward-gold group-hover:border-onward-gold transition-all">
+                        <svg class="w-8 h-8 text-onward-gold group-hover:text-onward-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-medium mb-4">Renovations</h3>
+                    <p class="font-serif text-gray-400 leading-relaxed mb-6">Transform your existing property into something extraordinary with our luxury renovation expertise.</p>
+                    <a href="services.html#renovations" class="text-onward-gold text-[12px] tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">LEARN MORE →</a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-onward-charcoal p-10 lg:p-12 group hover:bg-onward-gray/50 transition-colors reveal reveal-delay-3">
+                    <div class="w-16 h-16 border border-onward-gold/30 flex items-center justify-center mb-8 group-hover:bg-onward-gold group-hover:border-onward-gold transition-all">
+                        <svg class="w-8 h-8 text-onward-gold group-hover:text-onward-black transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-display text-2xl font-medium mb-4">Consultation</h3>
+                    <p class="font-serif text-gray-400 leading-relaxed mb-6">Expert guidance for those in early stages who need clarity on their vision and path forward.</p>
+                    <a href="services.html#consultation" class="text-onward-gold text-[12px] tracking-[0.2em] opacity-0 group-hover:opacity-100 transition-opacity">LEARN MORE →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="py-32 lg:py-48 bg-onward-black">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Image -->
+                <div class="relative reveal">
+                    <div class="aspect-[4/5] overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=85" 
+                             alt="Shahbazz Anwar - Founder of Onward Design Build" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <!-- Gold frame accent -->
+                    <div class="absolute -bottom-8 -right-8 w-full h-full border border-onward-gold/30 -z-10"></div>
+                    <!-- Caption -->
+                    <div class="absolute -bottom-4 left-8 bg-onward-black px-6 py-4">
+                        <p class="font-display text-xl">Shahbazz Anwar</p>
+                        <p class="font-serif text-onward-gold text-sm tracking-wider">Founder & Principal</p>
+                    </div>
+                </div>
+                
+                <!-- Content -->
+                <div class="reveal reveal-delay-2">
+                    <p class="font-serif text-onward-gold tracking-[0.4em] text-sm mb-8">THE VISIONARY</p>
+                    <h2 class="font-display text-4xl md:text-5xl font-medium leading-[1.1] mb-10 elegant-line">
+                        Building Houston's<br>
+                        <span class="italic">future</span>, one legacy<br>
+                        at a time.
+                    </h2>
+                    <div class="space-y-6 font-serif text-xl text-gray-400 leading-relaxed mb-12">
+                        <p>
+                            Shahbazz Anwar founded Onward Design Build with a singular vision: to elevate Houston's architectural landscape through unwavering commitment to quality, innovation, and client partnership.
+                        </p>
+                        <p>
+                            With over 15 years of experience in construction and development, Shahbazz has built a reputation for delivering projects that exceed expectations. His hands-on approach and deep industry relationships ensure every client receives the white-glove service they deserve.
+                        </p>
+                    </div>
+                    
+                    <!-- Quote -->
+                    <blockquote class="border-l border-onward-gold pl-8 my-12">
+                        <p class="font-display text-2xl italic text-white leading-relaxed mb-6">
+                            "Every project is an opportunity to create something that will stand for generations. We don't build for today—we build for legacy."
+                        </p>
+                    </blockquote>
+                    
+                    <a href="about.html" class="btn-premium inline-block px-10 py-5 text-[13px] tracking-[0.25em]">
+                        ABOUT ONWARD
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-32 lg:py-48 bg-onward-cream text-onward-black relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22><rect fill=%22none%22 stroke=%22%23C9A962%22 stroke-width=%220.5%22 width=%22100%22 height=%22100%22/></svg>');"></div>
+        </div>
+        
+        <div class="max-w-[1200px] mx-auto px-6 lg:px-16 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <p class="font-serif text-onward-gold-dark tracking-[0.4em] text-sm mb-6">TESTIMONIALS</p>
+                <h2 class="font-display text-4xl md:text-5xl lg:text-6xl font-medium">What Our Clients Say</h2>
+            </div>
+            
+            <!-- Main Testimonial -->
+            <div class="text-center reveal">
+                <svg class="w-16 h-16 mx-auto mb-10 text-onward-gold" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                </svg>
+                <blockquote class="font-serif text-2xl md:text-3xl lg:text-4xl italic text-gray-700 leading-relaxed max-w-4xl mx-auto mb-12">
+                    "Onward Design Build transformed our vision into a masterpiece. Shahbazz and his team delivered beyond our highest expectations. Our River Oaks home is truly a legacy we'll pass down for generations."
+                </blockquote>
+                <div>
+                    <p class="font-display text-xl font-medium text-onward-black">The Richardson Family</p>
+                    <p class="font-serif text-onward-gold-dark">River Oaks Custom Home</p>
+                </div>
+            </div>
+            
+            <!-- Trust indicators -->
+            <div class="flex flex-wrap justify-center gap-12 mt-20 pt-16 border-t border-gray-200 reveal">
+                <div class="text-center">
+                    <p class="font-display text-4xl font-medium text-onward-gold-dark">5.0</p>
+                    <div class="flex justify-center my-2">
+                        <span class="text-onward-gold">★★★★★</span>
+                    </div>
+                    <p class="text-[11px] tracking-[0.2em] text-gray-500">GOOGLE REVIEWS</p>
+                </div>
+                <div class="text-center">
+                    <p class="font-display text-4xl font-medium text-onward-gold-dark">100%</p>
+                    <p class="font-serif text-gray-600 my-2">Referral Rate</p>
+                    <p class="text-[11px] tracking-[0.2em] text-gray-500">CLIENT SATISFACTION</p>
+                </div>
+                <div class="text-center">
+                    <p class="font-display text-4xl font-medium text-onward-gold-dark">A+</p>
+                    <p class="font-serif text-gray-600 my-2">BBB Rating</p>
+                    <p class="text-[11px] tracking-[0.2em] text-gray-500">ACCREDITED</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-48 lg:py-64 overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1920&q=80" 
+                 alt="" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-onward-black/85"></div>
+        </div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-[1200px] mx-auto px-6 lg:px-16 text-center reveal">
+            <p class="font-serif text-onward-gold tracking-[0.4em] text-sm mb-8">BEGIN YOUR JOURNEY</p>
+            <h2 class="font-display text-4xl md:text-5xl lg:text-7xl font-medium leading-[1.1] mb-8">
+                Let's Build Something<br>
+                <span class="italic text-onward-gold">Extraordinary</span>
+            </h2>
+            <p class="font-serif text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-12">
+                Whether it's your dream home, your next investment, or a commercial landmark—we're ready to bring your vision to life.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="contact.html" class="btn-premium-solid px-12 py-6 text-[13px] tracking-[0.25em]">
+                    SCHEDULE A CONSULTATION
+                </a>
+                <a href="tel:+18328127476" class="btn-premium px-12 py-6 text-[13px] tracking-[0.25em]">
+                    CALL (832) 812-7476
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 bg-onward-black border-t border-onward-gray/30">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="inline-block mb-6">
+                        <span class="font-display text-3xl tracking-[0.2em]">ONWARD</span>
+                    </a>
+                    <p class="font-serif text-gray-500 text-lg max-w-md mb-8">
+                        Houston's premier design-build firm, creating architectural masterpieces for discerning clients since 2010.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 border border-onward-gray/50 flex items-center justify-center hover:bg-onward-gold hover:border-onward-gold transition-all group">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-onward-black" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="w-12 h-12 border border-onward-gray/50 flex items-center justify-center hover:bg-onward-gold hover:border-onward-gold transition-all group">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-onward-black" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                        <a href="https://wa.me/18328127476" class="w-12 h-12 border border-onward-gray/50 flex items-center justify-center hover:bg-onward-gold hover:border-onward-gold transition-all group">
+                            <svg class="w-5 h-5 text-gray-500 group-hover:text-onward-black" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h4 class="font-display text-lg mb-6">Navigation</h4>
+                    <ul class="space-y-4 font-serif text-gray-500">
+                        <li><a href="about.html" class="hover:text-onward-gold transition-colors">About</a></li>
+                        <li><a href="portfolio.html" class="hover:text-onward-gold transition-colors">Portfolio</a></li>
+                        <li><a href="services.html" class="hover:text-onward-gold transition-colors">Services</a></li>
+                        <li><a href="contact.html" class="hover:text-onward-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-display text-lg mb-6">Contact</h4>
+                    <ul class="space-y-4 font-serif text-gray-500">
+                        <li>
+                            <a href="tel:+18328127476" class="hover:text-onward-gold transition-colors">(832) 812-7476</a>
+                        </li>
+                        <li>
+                            <a href="mailto:Shahbazz@onwarddesignbuild.com" class="hover:text-onward-gold transition-colors">Shahbazz@onwarddesignbuild.com</a>
+                        </li>
+                        <li class="text-gray-600">
+                            1212 Edwards St Unit A<br>
+                            Houston, TX 77007
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom -->
+            <div class="pt-10 border-t border-onward-gray/30 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-[12px] tracking-[0.1em] text-gray-600">
+                    © 2026 ONWARD DESIGN BUILD LLC. ALL RIGHTS RESERVED.
+                </p>
+                <p class="text-[12px] tracking-[0.1em] text-gray-600 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-onward-gold transition-colors">Privacy Policy</a>
+                    <span class="mx-3">|</span>
+                    <a href="#" class="hover:text-onward-gold transition-colors">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('preloader').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('preloader').style.display = 'none';
+                }, 500);
+            }, 800);
+        });
+        
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuLine1 = document.getElementById('menu-line-1');
+        const menuLine2 = document.getElementById('menu-line-2');
+        let menuOpen = false;
+        
+        menuToggle.addEventListener('click', () => {
+            menuOpen = !menuOpen;
+            if (menuOpen) {
+                mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                menuLine1.style.transform = 'rotate(45deg) translateY(6px)';
+                menuLine2.style.transform = 'rotate(-45deg) translateY(-6px)';
+            } else {
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuLine1.style.transform = '';
+                menuLine2.style.transform = '';
+            }
+        });
+        
+        // Close menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuOpen = false;
+                mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+                menuLine1.style.transform = '';
+                menuLine2.style.transform = '';
+            });
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-onward-black/95', 'backdrop-blur-md', 'h-20');
+                navbar.querySelector('.h-28')?.classList.remove('h-28');
+                navbar.querySelector('.h-28')?.classList.add('h-20');
+            } else {
+                navbar.classList.remove('bg-onward-black/95', 'backdrop-blur-md', 'h-20');
+            }
+        });
+        
+        // Reveal on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        
+        revealElements.forEach(el => revealObserver.observe(el));
+        
+        // Parallax effect (optional)
+        window.addEventListener('scroll', () => {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            parallaxElements.forEach(el => {
+                const speed = el.dataset.speed || 0.5;
+                el.style.setProperty('--parallax-offset', `${window.scrollY * speed}px`);
+            });
+        });
+    </script>
+</body>
+</html>

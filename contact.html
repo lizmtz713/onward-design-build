@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Onward Design Build | Houston Luxury Construction</title>
+    <meta name="description" content="Contact Onward Design Build for your luxury custom home, commercial development, or renovation project in Houston. Schedule a consultation with Shahbazz Anwar.">
+    
+    <!-- Same head content as index.html - fonts, tailwind, styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'onward-black': '#0D0D0D',
+                        'onward-charcoal': '#1A1A1A',
+                        'onward-gray': '#2D2D2D',
+                        'onward-gold': '#C9A962',
+                        'onward-gold-light': '#E8D5A3',
+                        'onward-gold-dark': '#A68B4B',
+                        'onward-cream': '#F8F6F3',
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .btn-premium { position: relative; overflow: hidden; border: 1px solid #C9A962; background: transparent; color: #C9A962; transition: color 0.4s ease; }
+        .btn-premium::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: #C9A962; transition: left 0.4s ease; z-index: -1; }
+        .btn-premium:hover { color: #0D0D0D; }
+        .btn-premium:hover::before { left: 0; }
+        .btn-premium-solid { background: #C9A962; color: #0D0D0D; transition: all 0.4s ease; }
+        .btn-premium-solid:hover { background: #E8D5A3; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #C9A962; }
+    </style>
+</head>
+<body class="font-sans text-white bg-onward-black antialiased">
+
+    <!-- Navigation (same as index) -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-onward-black/95 backdrop-blur-md">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="font-display text-2xl lg:text-3xl font-semibold tracking-[0.2em] hover:text-onward-gold transition-colors">ONWARD</a>
+                <div class="hidden lg:flex items-center space-x-16">
+                    <a href="about.html" class="text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">ABOUT</a>
+                    <a href="portfolio.html" class="text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">PORTFOLIO</a>
+                    <a href="services.html" class="text-[13px] tracking-[0.2em] text-gray-300 hover:text-onward-gold transition-colors">SERVICES</a>
+                    <a href="contact.html" class="btn-premium px-8 py-4 text-[13px] tracking-[0.2em]">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="pt-40 pb-20 bg-onward-charcoal">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <p class="font-serif text-onward-gold tracking-[0.4em] text-sm mb-6 reveal">GET IN TOUCH</p>
+            <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-medium reveal">Let's Talk</h1>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 bg-onward-cream text-onward-black">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="grid lg:grid-cols-2 gap-20">
+                <!-- Form -->
+                <div class="reveal">
+                    <h2 class="font-display text-3xl font-medium mb-8">Start Your Project</h2>
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-[12px] tracking-[0.2em] text-gray-500 mb-2">FULL NAME *</label>
+                                <input type="text" name="name" required class="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-300 text-onward-black text-lg">
+                            </div>
+                            <div>
+                                <label class="block text-[12px] tracking-[0.2em] text-gray-500 mb-2">PHONE *</label>
+                                <input type="tel" name="phone" required class="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-300 text-onward-black text-lg">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-[12px] tracking-[0.2em] text-gray-500 mb-2">EMAIL *</label>
+                            <input type="email" name="email" required class="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-300 text-onward-black text-lg">
+                        </div>
+                        <div>
+                            <label class="block text-[12px] tracking-[0.2em] text-gray-500 mb-2">PROJECT TYPE</label>
+                            <select name="project_type" class="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-300 text-onward-black text-lg">
+                                <option value="">Select a project type</option>
+                                <option>Custom Home Build</option>
+                                <option>Commercial Development</option>
+                                <option>Luxury Renovation</option>
+                                <option>Design Consultation</option>
+                                <option>Investment Partnership</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[12px] tracking-[0.2em] text-gray-500 mb-2">BUDGET RANGE</label>
+                            <select name="budget" class="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-300 text-onward-black text-lg">
+                                <option value="">Select budget range</option>
+                                <option>$500K - $1M</option>
+                                <option>$1M - $2.5M</option>
+                                <option>$2.5M - $5M</option>
+                                <option>$5M+</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-[12px] tracking-[0.2em] text-gray-500 mb-2">TELL US ABOUT YOUR VISION</label>
+                            <textarea name="message" rows="5" class="w-full px-0 py-4 bg-transparent border-0 border-b border-gray-300 text-onward-black text-lg resize-none" placeholder="Share your project details, timeline, and goals..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-premium-solid w-full py-5 text-[13px] tracking-[0.25em] mt-8">
+                            SEND MESSAGE
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="lg:pl-16 reveal">
+                    <div class="mb-16">
+                        <p class="text-[12px] tracking-[0.2em] text-gray-500 mb-3">CALL US DIRECTLY</p>
+                        <a href="tel:+18328127476" class="font-display text-4xl lg:text-5xl font-medium text-onward-black hover:text-onward-gold-dark transition-colors">
+                            (832) 812-7476
+                        </a>
+                    </div>
+                    
+                    <div class="mb-16">
+                        <p class="text-[12px] tracking-[0.2em] text-gray-500 mb-3">WHATSAPP</p>
+                        <a href="https://wa.me/18328127476" class="inline-flex items-center font-serif text-2xl text-onward-black hover:text-onward-gold-dark transition-colors">
+                            Message us on WhatsApp
+                            <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="mb-16">
+                        <p class="text-[12px] tracking-[0.2em] text-gray-500 mb-3">EMAIL</p>
+                        <a href="mailto:Shahbazz@onwarddesignbuild.com" class="font-serif text-xl text-onward-black hover:text-onward-gold-dark transition-colors">
+                            Shahbazz@onwarddesignbuild.com
+                        </a>
+                    </div>
+                    
+                    <div class="mb-16">
+                        <p class="text-[12px] tracking-[0.2em] text-gray-500 mb-3">OFFICE</p>
+                        <p class="font-serif text-xl text-onward-black">
+                            1212 Edwards St Unit A<br>
+                            Houston, TX 77007
+                        </p>
+                        <p class="font-serif text-gray-500 mt-2">By Appointment Only</p>
+                    </div>
+                    
+                    <div>
+                        <p class="text-[12px] tracking-[0.2em] text-gray-500 mb-3">OFFICE HOURS</p>
+                        <p class="font-serif text-xl text-onward-black">
+                            Monday – Friday: 9:00 AM – 5:00 PM<br>
+                            <span class="text-gray-500">Weekends by appointment</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="h-96 bg-onward-gray">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3463.8!2d-95.4!3d29.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjnCsDQ2JzEyLjAiTiA5NcKwMjQnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890"
+            width="100%" 
+            height="100%" 
+            style="border:0; filter: grayscale(100%) contrast(1.1);" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </section>
+
+    <!-- Footer (same as index) -->
+    <footer class="py-16 bg-onward-black border-t border-onward-gray/30">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <a href="index.html" class="font-display text-2xl tracking-[0.2em] mb-4 md:mb-0">ONWARD</a>
+                <p class="text-[12px] tracking-[0.1em] text-gray-600">
+                    © 2026 ONWARD DESIGN BUILD LLC. ALL RIGHTS RESERVED.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
